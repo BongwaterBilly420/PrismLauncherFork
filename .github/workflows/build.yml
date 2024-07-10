@@ -54,17 +54,14 @@ jobs:
         include:
           - os: ubuntu-20.04
             qt_ver: 5
-            qt_host: linux
-            qt_arch: ""
-            qt_version: "5.12.8"
-            qt_modules: "qtnetworkauth"
 
           - os: ubuntu-20.04
             qt_ver: 6
             qt_host: linux
             qt_arch: ""
             qt_version: "6.2.4"
-            qt_modules: "qt5compat qtimageformats qtnetworkauth"
+            qt_modules: "qt5compat qtimageformats"
+            qt_tools: ""
 
           - os: windows-2022
             name: "Windows-MinGW-w64"
@@ -78,9 +75,10 @@ jobs:
             vcvars_arch: "amd64"
             qt_ver: 6
             qt_host: windows
-            qt_arch: ""
-            qt_version: "6.7.1"
-            qt_modules: "qt5compat qtimageformats qtnetworkauth"
+            qt_arch: ''
+            qt_version: '6.7.0'
+            qt_modules: 'qt5compat qtimageformats'
+            qt_tools: ''
 
           - os: windows-2022
             name: "Windows-MSVC-arm64"
@@ -89,18 +87,20 @@ jobs:
             vcvars_arch: "amd64_arm64"
             qt_ver: 6
             qt_host: windows
-            qt_arch: "win64_msvc2019_arm64"
-            qt_version: "6.7.1"
-            qt_modules: "qt5compat qtimageformats qtnetworkauth"
+            qt_arch: 'win64_msvc2019_arm64'
+            qt_version: '6.7.0'
+            qt_modules: 'qt5compat qtimageformats'
+            qt_tools: ''
 
           - os: macos-12
             name: macOS
             macosx_deployment_target: 11.0
             qt_ver: 6
             qt_host: mac
-            qt_arch: ""
-            qt_version: "6.7.1"
-            qt_modules: "qt5compat qtimageformats qtnetworkauth"
+            qt_arch: ''
+            qt_version: '6.7.0'
+            qt_modules: 'qt5compat qtimageformats'
+            qt_tools: ''
 
           - os: macos-12
             name: macOS-Legacy
@@ -108,7 +108,8 @@ jobs:
             qt_ver: 5
             qt_host: mac
             qt_version: "5.15.2"
-            qt_modules: "qtnetworkauth"
+            qt_modules: ""
+            qt_tools: ""
 
     runs-on: ${{ matrix.os }}
 
